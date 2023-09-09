@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage One Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 data-testid="slackUserName">I am ADEOYE Abdullah Ayomide ADEOYE</h1>
+    <div class="profile-image">
+      <figure>
+        <img
+          src="/Anonymous 2.jpg"
+          alt="The_OfficialAbdullah"
+          data-testid="slackDisplayImage"
+          width="300px"
+          height="300px"
+        />
+        <figcaption>My Slack Display Image</figcaption>
+      </figure>
+    </div>
+    <div class="current-dayxtime">
+      <p data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>
+      <datetime data-testid="currentUTCTime" id="currentUTCMilliseconds"></datetime>
+    </div>
+    <p test-testid="myTrack" id="mytrack">Frontend</p>
+  </body>
+  <script>
+    const currentUTCMilliseconds = new Date().getTime();
+    console.log(currentUTCMilliseconds);
+
+    const elementWithDataAttribute =
+      document.getElementById("currentUTCMilliseconds");
+    elementWithDataAttribute.setAttribute(
+      "data-testid",
+      currentUTCMilliseconds
+    );
+    const currentDate = new Date();
+const options = { weekday: 'long' };
+const currentDayOfWeek = currentDate.toLocaleDateString('en-US', options);
+
+const elementWithDataWeek = document.getElementById('currentDayOfTheWeek');
+
+elementWithDataWeek.setAttribute("data-timeid", currentDayOfWeek);
+  </script>
+</html>
